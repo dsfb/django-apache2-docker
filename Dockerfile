@@ -6,7 +6,7 @@ RUN apt-get -y install python3 libapache2-mod-wsgi-py3
 RUN ln /usr/bin/python3 /usr/bin/python
 RUN apt-get -y install python3-pip
 RUN pip install --upgrade pip
-RUN pip install django==3.2.12 ptvsd
+RUN pip install "django ~= 3.2.0" ptvsd
 ADD ./demo_site.conf /etc/apache2/sites-available/000-default.conf
-EXPOSE 80 3500
+EXPOSE 80 81 3500
 CMD ["apache2ctl", "-D", "FOREGROUND"]
