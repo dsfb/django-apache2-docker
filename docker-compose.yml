@@ -1,12 +1,12 @@
 version: "2"
 
-services: 
+services:
   django-apache2:
     build: .
     container_name: django-apache2
     ports:
-      - '8005:80'
+      - '8500:80'
       - '3500:3500'
       - '8006:81'
-    volumes: 
+    volumes:
       - $PWD/www:/var/www/html
